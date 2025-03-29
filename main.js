@@ -1,19 +1,16 @@
-let messaggio = prompt ('Tira il dado 3 volte');
-
-function somma(giocatore) {
+function somma() {
     let punteggio = 0;
     let n = 3;
-    for (let i = 1; i <= n; i++){
-        punteggio = punteggio + Math.floor(Math.random() * (6 - 1) + 1); 
+    for (let i = 0; i < n; i++){
+        let tiro = Math.floor(Math.random() * (6 - 1) + 1); 
+        punteggio += tiro;
     }
-    let messaggio = `Il punteggio ${punteggio} ${giocatore}`;
-    return messaggio;
+    return punteggio;
 }
 
-let giocatore1 = somma('è del giocatore 1');
-let giocatore2 = somma('è del giocatore 2');
-console.log(giocatore1);
-console.log(giocatore2);
+let giocatore1 = somma();
+let giocatore2 = somma();
+
 
 if (giocatore1 > giocatore2) {
     console.log('Vince il giocatore 1'); 
@@ -22,3 +19,6 @@ if (giocatore1 > giocatore2) {
 } else {
     console.log('Vince il giocatore 2');
 }
+
+console.log(giocatore1);
+console.log(giocatore2);
